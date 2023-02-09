@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Graph Chart in ReactJS
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A dynamic and user friendly Graph Chart App built with React.js and ApexCharts.js that allows users to visualize the data by providing a REST API.  This documentation will cover how to install it in your React application and use it to visualize data from an API endpoint.
+ApexCharts.js is a library that is used to visualize data. It provides features such as annotations, responsiveness, and animations that make your charts interactive. It can be used with other frameworks such as Vue and Angular.
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+I have used a JSON server to create a fake REST API that we will consume in our application.
+To create a dummy REST API, install the json-server library using the following command in your terminal. 
 
-### `npm start`
+npm install -g json-server
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Next, I created a functional component MyGraphs as shown in graphs.js.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Creating fake REST API using JSON server
 
-### `npm test`
+This file contains dummy data about the average temperature (in degrees Celsius) in Nairobi City between 1st March 2022 and 7th March 2022.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Open another terminal and run the following command to start the server.
 
-### `npm run build`
+json-server --watch data/db.json --port 8000
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The command above starts our JSON server on port 8000. I have specified a port number because when you run the JSON server, it will try to run on port 3000, but we are already using this port to run our React application.
+Finally, import the MyGraphs component into App.js. If you run the project on localhost:3000, below is an image of what will be on the browser.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+![Screenshot](screenshot.png)
